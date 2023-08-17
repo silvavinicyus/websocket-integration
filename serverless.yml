@@ -42,23 +42,23 @@ custom:
       - "image/pjpeg"
       - "image/png"
       - "image/jpg"
-  functionsDir: src/4-framework/functions
+  functionsDir: src/functions
   serverless-offline:
     httpPort: 4000
     lambdaPort: 4001
-  webpack:
-    webpackConfig: "webpack.config.js"
-    packager: "npm"
-    packagerOptions:
-      noFrozenLockfile: true
-    includeModules:
-      forceInclude:
-        - mysql2
+  # webpack:
+  #   webpackConfig: "webpack.config.js"
+  #   packager: "npm"
+  #   packagerOptions:
+  #     noFrozenLockfile: true
+  #   includeModules:
+  #     forceInclude:
+  #       - mysql2
 
 plugins:
   - serverless-disable-functions
-  - serverless-webpack
   - serverless-offline
+  # - serverless-webpack
 
 functions:
-  - "${file(${self:custom.functionsDir}/foo/foo.yml)}"
+  - "${file(${self:custom.functionsDir}/websocket/websocket.yml)}"
