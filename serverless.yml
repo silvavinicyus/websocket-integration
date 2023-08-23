@@ -61,4 +61,5 @@ plugins:
   - serverless-offline
 
 functions:
-  - "${file(${self:custom.functionsDir}/foo/foo.yml)}"
+  - "${file(${self:custom.functionsDir}/post/post.yml)}"
+  - "${file(${self:custom.functionsDir}/websocket/websocket.yml)}"
