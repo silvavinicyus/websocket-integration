@@ -1,37 +1,32 @@
-import { IFooEntity } from '@domain/entities/foo'
 import { DataTypes, Model } from 'sequelize'
+import { IConnectionEntity } from '@domain/entities/connections'
 import { sequelize } from '../utility/database'
 
-export class Foo extends Model<IFooEntity> {}
+export class ConnectionModel extends Model<IConnectionEntity> {}
 
-Foo.init(
+ConnectionModel.init(
   {
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
     },
-    uuid: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
-    title: {
+    connectionId: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     created_at: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
     },
     updated_at: {
       type: DataTypes.DATE,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   },
   {
-    tableName: 'foo',
-    modelName: 'foo',
+    tableName: 'connections',
+    modelName: 'connections',
     timestamps: false,
     underscored: true,
     sequelize,

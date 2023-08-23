@@ -1,6 +1,8 @@
-import { CreateFooOperator } from '@controller/operations/foo/createFoo'
 import { ContainerModule, interfaces } from 'inversify'
+import { CreatePostOperator } from '@controller/operations/post/createPost'
+import { HandleWebsocketOperator } from '@controller/operations/websocket/handleWebsocket'
 
 export const operatorModule = new ContainerModule((bind: interfaces.Bind) => {
-  bind(CreateFooOperator).toSelf()
+  bind(CreatePostOperator).toSelf()
+  bind(HandleWebsocketOperator).toSelf()
 })

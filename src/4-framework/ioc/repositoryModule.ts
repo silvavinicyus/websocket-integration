@@ -1,19 +1,28 @@
-import { IFooRepository, IFooRepositoryToken } from '@business/repositories/foo/iFooRepository'
+import { ContainerModule, interfaces } from 'inversify'
+import {
+  IConnectionRepository,
+  IConnectionRepositoryToken,
+} from '@business/repositories/connection/iConnectionRepository'
+import {
+  IPostRepository,
+  IPostRepositoryToken,
+} from '@business/repositories/post/iPostRepository'
 import {
   ITransactionRepository,
-  ITransactionRepositoryToken
+  ITransactionRepositoryToken,
 } from '@business/repositories/transaction/iTransactionRepository'
-import { FooRepositorySequelize } from '@framework/repositories/sequelize/foo'
+import { ConnectionRepository } from '@framework/repositories/sequelize/connection'
+import { PostRepositorySequelize } from '@framework/repositories/sequelize/post'
 import { TransactionRepositorySequelize } from '@framework/repositories/sequelize/transaction'
-import { ContainerModule, interfaces } from 'inversify'
 
 export const repositoryModule = new ContainerModule((bind: interfaces.Bind) => {
-  bind<IFooRepository>(IFooRepositoryToken).to(
-    FooRepositorySequelize
-  )
+  bind<IPostRepository>(IPostRepositoryToken).to(PostRepositorySequelize)
 
   bind<ITransactionRepository>(ITransactionRepositoryToken).to(
     TransactionRepositorySequelize
   )
-  
+
+  bind<IConnectionRepository>(IConnectionRepositoryToken).to(
+    ConnectionRepository
+  )
 })

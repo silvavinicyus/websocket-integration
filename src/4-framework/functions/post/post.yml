@@ -1,0 +1,7 @@
+createFoo:
+  handler: ${self:custom.functionsDir}/post/create.handler
+  events:
+    - http:
+        path: /post/create
+        method: post
+        cors: true

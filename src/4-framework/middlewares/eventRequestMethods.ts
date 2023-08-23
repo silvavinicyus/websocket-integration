@@ -1,6 +1,6 @@
 import middy from '@middy/core'
-import { IHandlerInput, IHandlerResult } from '@framework/utility/types'
 import { Context } from 'aws-lambda'
+import { IHandlerInput, IHandlerResult } from '@framework/utility/types'
 import { methods } from '@framework/utility/middleware'
 
 /**
