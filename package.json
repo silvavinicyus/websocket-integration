@@ -11,13 +11,16 @@
     "test:dev": "npm t -- --watch --runInBand --verbose",
     "test:staged": "npm t -- --passWithNoTests --findRelatedTests --listTests",
     "sls": "cross-env NODE_ENV=test npx serverless",
+    "sql": "sequelize-cli",
     "dev": "cross-env NODE_ENV=test npx serverless offline --stage dev"
   },
   "engines": {
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "@aws-sdk/client-apigatewaymanagementapi": "^3.391.0",
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.395.0",
+    "@aws-sdk/client-dynamodb": "^3.395.0",
+    "@aws-sdk/lib-dynamodb": "^3.395.0",
     "@jest/types": "^27.1.1",
     "@middy/core": "^1.5.2",
     "@middy/http-cors": "^2.5.1",
@@ -55,7 +58,8 @@
     "source-map-support": "^0.5.20",
     "string-to-ms": "^1.1.2",
     "uuid": "^8.3.2",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "wscat": "^5.2.0"
   },
   "devDependencies": {
     "@serverless/typescript": "^2.23.0",
@@ -70,8 +74,8 @@
     "@types/pizzip": "^3.0.2",
     "@types/uuid": "^8.3.1",
     "@types/validator": "^13.7.1",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
-    "@typescript-eslint/parser": "^4.31.2",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "babel-eslint": "^10.1.0",
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",

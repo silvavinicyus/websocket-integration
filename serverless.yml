@@ -61,4 +61,5 @@ plugins:
   # - serverless-webpack
 
 functions:
+  - "${file(${self:custom.functionsDir}/post/post.yml)}"
   - "${file(${self:custom.functionsDir}/websocket/websocket.yml)}"

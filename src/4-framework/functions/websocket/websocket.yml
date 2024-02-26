@@ -1,0 +1,7 @@
+handleWebsocket:
+  handler: ${self:custom.functionsDir}/websocket/handle.handler
+  events:
+    - websocket:
+        route: $connect
+    - websocket:
+        route: $disconnect
